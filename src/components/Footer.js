@@ -1,4 +1,7 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebook, faTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function Footer(props) {
   return (
@@ -8,21 +11,20 @@ function Footer(props) {
           <div>
             <h2 className="text-lg font-semibold mb-2">Company Mission</h2>
             <p className="text-gray-400 text-sm">
-              Trimage is a versatile web application that seamlessly combines the functionalities of a photo album and a photo editor. It provides users with an intuitive platform to upload, manage, and organize their photo albums while also offering powerful photo editing capabilities. With Trimage, users can adjust photo size, rotation, contrast, brightness, apply filters, and more, all within the same application.
+              Trimage combines memory preservation and capturing extraordinary moments effortlessly. It offers a user-friendly platform to relive the past, enhance photos, and unleash emotions. With intuitive tools, Trimage empowers users to transform snapshots into remarkable masterpieces. Through Trimage, we immortalize stories, celebrate achievements, and treasure life's priceless moments.
             </p>
           </div>
           <div>
             <h2 className="text-lg font-semibold mb-2">Social Media</h2>
             <div className="flex items-center">
               <a href="#" className="text-gray-400 hover:text-white">
-                <svg className="w-6 h-6 mr-4" viewBox="0 0 24 24">
-                  {/* Add your social media icon SVG code here */}
-                </svg>
+                <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 mr-4" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white">
-                <svg className="w-6 h-6 mr-4" viewBox="0 0 24 24">
-                  {/* Add your social media icon SVG code here */}
-                </svg>
+                <FontAwesomeIcon icon={faTwitter} className="w-6 h-6 mr-4" />
+              </a>
+              <a href="#" className="text-gray-400 hover:text-white">
+                <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 mr-4" />
               </a>
               {/* Add more social media links with icons as needed */}
             </div>

@@ -1,8 +1,8 @@
 import React from 'react';
-import { ReactComponent as PhotoEditingIcon } from '../icons/image-svgrepo-com.svg';
-import { ReactComponent as UserInterfaceIcon } from '../icons/user-interface-svgrepo-com.svg';
-import { ReactComponent as SecurePrivateIcon } from '../icons/privacy-dashboard-svgrepo-com.svg';
-import { ReactComponent as QualityIcon } from '../icons/suitability-analysis-output-svgrepo-com.svg';
+import { ReactComponent as PhotoEditingIcon } from '../icons/learnmoreicons/image-svgrepo-com.svg';
+import { ReactComponent as UserInterfaceIcon } from '../icons/learnmoreicons/user-interface-svgrepo-com.svg';
+import { ReactComponent as SecurePrivateIcon } from '../icons/learnmoreicons/privacy-dashboard-svgrepo-com.svg';
+import { ReactComponent as QualityIcon } from '../icons/learnmoreicons/suitability-analysis-output-svgrepo-com.svg';
 
 export default function LearnMore() {
   return (
