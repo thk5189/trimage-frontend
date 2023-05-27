@@ -50,6 +50,7 @@ import React, { useEffect } from 'react';
 import '../css/Editor.css'; // Import your custom CSS file
 
 const Editor = () => {
+  
   useEffect(() => {
     let upload_img_box = document.querySelector('.upload_img_box');
     let selectedImage = document.querySelector('#selectedImage');
