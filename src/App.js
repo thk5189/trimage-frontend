@@ -12,29 +12,31 @@ import Editor from "./pages/Editor";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Signin from "./pages/Signin";
-import Update from "./pages/Update"
+import Update from "./pages/Update";
+import Learnmore from "./pages/Learnmore"
 
 function App() {
   const URL = "http://localhost:4000/";
 
   return (
     <div className="App">
-      <Header />
-      <Banner /> {/* Include the Banner component */}
       <Router>
+        <Header />
+        <Banner />
         <Routes>
-        <Route exact path="/" element={<Home />} />
-          <Route exact path="/Album" element={<Album URL={URL} />} />
-          <Route exact path="/Photos" element={<Photos URL={URL} />} />
-          <Route exact path="/Photo/:id" element={<Photo URL={URL} />} />
-          <Route exact path="/Editor" element={<Editor URL={URL} />} />
-          <Route exact path="/About" element={<About />} />
-          <Route exact path="/Contact" element={<Contact />} />
-          <Route exact path="/Signin" element={<Signin />} />
-          <Route exact path="/Update" element={<Update />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/Album" element={<Album URL={URL} />} />
+          <Route path="/Photos" element={<Photos URL={URL} />} />
+          <Route path="/Photo/:id" element={<Photo URL={URL} />} />
+          <Route path="/Editor" element={<Editor URL={URL} />} />
+          <Route path="/About" element={<About />} />
+          <Route path="/Contact" element={<Contact />} />
+          <Route path="/Signin" element={<Signin />} />
+          <Route path="/Update" element={<Update />} />
+          <Route path="/Learnmore" element={<Learnmore />} />
         </Routes>
+        <Footer />
       </Router>
-      <Footer />
     </div>
   );
 }

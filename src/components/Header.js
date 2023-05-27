@@ -20,13 +20,15 @@ import React, { Fragment } from 'react';
 import { Disclosure, Menu, Transition } from '@headlessui/react';
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import { MenuIcon, PhotographIcon } from '@heroicons/react/outline';
+import { Link } from 'react-router-dom'; // Import the Link component from react-router-dom
 
 const navigation = [
-  { name: 'TRIMAGE.', href: '#', current: true },
-  { name: 'About', href: '#', current: false },
-  { name: 'Contact', href: '#', current: false },
-  { name: 'Register', href: '#', current: false },
+  { name: 'TRIMAGE.', href: '/', current: true }, // Replace '#' with the actual URL of your homepage
+  // { name: 'About', href: '#', current: false },
+  // { name: 'Contact', href: '#', current: false },
+  // { name: 'Register', href: '#', current: false },
 ];
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ');
@@ -34,7 +36,7 @@ function classNames(...classes) {
 
 export default function Header() {
   return (
-    <Disclosure as="nav" className="text-white">
+    <Disclosure as="nav" className="text-black">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

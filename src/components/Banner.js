@@ -1,4 +1,6 @@
-import { XMarkIcon } from '@heroicons/react/20/solid'
+
+import { XMarkIcon } from '@heroicons/react/20/solid';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router
 
 export default function Banner() {
   return (
@@ -35,12 +37,12 @@ export default function Banner() {
           </svg>
           Explore powerful editing tools and enhance your experience.
         </p>
-        <a
-          href="#"
+        <Link
+          to="/editor" // Replace "/editor" with the actual URL of your editor page
           className="flex-none rounded-full bg-green-500 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-green-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
         >
           Edit Photo Now <span aria-hidden="true">&rarr;</span>
-        </a>
+        </Link>
       </div>
       <div className="flex flex-1 justify-end">
         <button type="button" className="-m-3 p-3 focus-visible:outline-offset-[-4px]">

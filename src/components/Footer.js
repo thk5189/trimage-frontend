@@ -2,7 +2,7 @@ import React from 'react';
 
 function Footer(props) {
   return (
-    <footer className="bg-gray-900 text-white py-6">
+    <footer className="bg-black text-white py-6">
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
@@ -38,7 +38,7 @@ function Footer(props) {
             </p>
           </div>
         </div>
-        <hr className="border-gray-700 mt-8" />
+        <hr className="border-gray-200 mt-8" />
         <div className="text-gray-400 text-xs mt-6">
           &copy; {new Date().getFullYear()} Trimage. All rights reserved.
         </div>
