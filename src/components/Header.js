@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Header.css';
-import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 
 function Header(props) {
   const [user, setUser] = useState(null); // State to store the signed-in user
 
-  const handleGoogle = async (e) => {
+  const handleGoogle = async () => {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
@@ -19,35 +20,46 @@ function Header(props) {
         console.error('Sign-in error:', error);
       }
     }
-  }
+  };
+
+  const handleSignOut = async () => {
+    try {
+      await signOut(auth);
+      setUser(null); // Reset the user state
+    } catch (error) {
+      console.error('Sign-out error:', error);
+    }
+  };
 
   return (
     <div className="header">
-      <img
-        src="https://i.imgur.com/9bnrCg0.png"
-        alt="Logo"
-        className="logo"
-        style={{ width: '50px', height: 'auto' }}
-      />
-      <h1 className="header-title">trimage.</h1>
-      {user ? ( // Render the user information when signed in
-        <div>
-          <span>{user.displayName}</span> {/* Display the user's name */}
+      <Link to="/" className="logo-section">
+        <img src="https://i.imgur.com/9bnrCg0.png" alt="Logo" className="logo" />
+        <h1 className="header-title">Trimage</h1>
+      </Link>
+      {user ? (
+        <div className="profile-section">
+          {/* <span>{user.displayName}</span> */}
           <img
             src={user.photoURL} // Display the user's profile picture
             alt="Profile"
             className="profile-icon"
-            style={{ width: '30px', height: '30px' }}
           />
+          <button className="auth-button" onClick={handleSignOut}>
+            Sign Out
+          </button>
         </div>
       ) : (
-        <button onClick={handleGoogle}>Sign In</button>
+        <button className="auth-button" onClick={handleGoogle}>
+          Sign In
+        </button>
       )}
     </div>
   );
 }
 
 export default Header;
+
 
 
 // import React, { Fragment } from 'react';
