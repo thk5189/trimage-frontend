@@ -1,13 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Header.css';
-import { GoogleAuthProvider, signInWithPopup, signOut } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '../firebaseConfig';
 
-function Header(props) {
+function Header() {
   const [user, setUser] = useState(null); // State to store the signed-in user
+  const [showMenu, setShowMenu] = useState(false); // State to toggle menu visibility
 
-  const handleGoogle = async () => {
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
+
+  const handleGoogleSignIn = async () => {
     const provider = new GoogleAuthProvider();
     try {
       const result = await signInWithPopup(auth, provider);
@@ -31,26 +46,35 @@ function Header(props) {
     }
   };
 
+  const handleMenuToggle = () => {
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className="header">
       <Link to="/" className="logo-section">
         <img src="https://i.imgur.com/9bnrCg0.png" alt="Logo" className="logo" />
-        <h1 className="header-title">Trimage</h1>
+        <h1 className="header-title">
+          <span className="header-tr">Tr</span>image.
+        </h1>
       </Link>
       {user ? (
-        <div className="profile-section">
+        <div className="profile-section" onMouseEnter={handleMenuToggle} onMouseLeave={handleMenuToggle}>
           {/* <span>{user.displayName}</span> */}
-          <img
-            src={user.photoURL} // Display the user's profile picture
-            alt="Profile"
-            className="profile-icon"
-          />
+          <img src={user.photoURL} alt="Profile" className="profile-icon" />
+          {showMenu && (
+            <div className="dropdown-menu">
+              <Link to="/album" className="dropdown-item">
+                Album
+              </Link>
+            </div>
+          )}
           <button className="auth-button" onClick={handleSignOut}>
             Sign Out
           </button>
         </div>
       ) : (
-        <button className="auth-button" onClick={handleGoogle}>
+        <button className="auth-button" onClick={handleGoogleSignIn}>
           Sign In
         </button>
       )}
@@ -59,7 +83,6 @@ function Header(props) {
 }
 
 export default Header;
-
 
 
 // import React, { Fragment } from 'react';
@@ -220,3 +243,4 @@ export default Header;
 //     </Disclosure>
 //   )
 // }
+
