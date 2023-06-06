@@ -17,15 +17,16 @@ function Footer(props) {
           <div>
             <h2 className="text-lg font-semibold mb-2">Social Media</h2>
             <div className="flex items-center">
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 mr-4" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FontAwesomeIcon icon={faTwitter} className="w-6 h-6 mr-4" />
-              </a>
-              <a href="#" className="text-gray-400 hover:text-white">
-                <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 mr-4" />
-              </a>
+            <a href="https://www.facebook.com/example" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+  <FontAwesomeIcon icon={faFacebook} className="w-6 h-6 mr-4" />
+</a>
+<a href="https://twitter.com/example" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+  <FontAwesomeIcon icon={faTwitter} className="w-6 h-6 mr-4" />
+</a>
+<a href="https://www.instagram.com/example" className="text-gray-400 hover:text-white" target="_blank" rel="noopener noreferrer">
+  <FontAwesomeIcon icon={faInstagram} className="w-6 h-6 mr-4" />
+</a>
+
               {/* Add more social media links with icons as needed */}
             </div>
           </div>

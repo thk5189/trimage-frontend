@@ -39,7 +39,7 @@
 // export default App;
 
 
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import Header from "./components/Header";
@@ -51,7 +51,7 @@ import Editor from "./pages/Editor";
 import Learnmore from "./pages/Learnmore"
 
 function App() {
-  const URL = "http://localhost:4000/";
+  const URL = "http://localhost:4000";
 
   return (
     <div className="App">
@@ -62,8 +62,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Editor" element={<Editor URL={URL} />} />
           <Route path="/Learnmore" element={<Learnmore />} />
-
-
         </Routes>
         <Footer />
       </Router>
@@ -72,5 +70,3 @@ function App() {
 }
 
 export default App;
-
-
