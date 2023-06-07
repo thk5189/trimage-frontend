@@ -193,9 +193,9 @@ const Editor = () => {
     });
   }, []);
 
-const handleDownload = () => {
-  // Implement the download logic here
-};
+// const handleDownload = () => {
+//   // Implement the download logic here
+// };
 
 
 
@@ -224,10 +224,10 @@ const handleDownload = () => {
               <i className="bx bxs-magic-wand"></i>
               <p>Saturation</p>
             </li>
-            <li onClick={handleDownload}>
+            {/* <li onClick={handleDownload}>
   <i className="bx bx-export"></i>
   <p>Export</p>
-</li>
+</li> */}
           </ul>
         </div>
         <div className="content">
