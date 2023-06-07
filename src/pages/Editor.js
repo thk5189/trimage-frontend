@@ -144,22 +144,22 @@ const Editor = () => {
     });
 
   /*download image btn click*/
-  function Download_btn() {
-      if (image.getAttribute('src') !== '') {
-        if (Edited === true) {
-          context.drawImage(image, 0, 0, canvas.width, canvas.height);
-          var jpegUrl = canvas.toDataURL('image/jpg');
+  // function Download_btn() {
+  //     if (image.getAttribute('src') !== '') {
+  //       if (Edited === true) {
+  //         context.drawImage(image, 0, 0, canvas.width, canvas.height);
+  //         var jpegUrl = canvas.toDataURL('image/jpg');
 
-          const link = document.createElement('a');
-          document.body.appendChild(link);
+  //         const link = document.createElement('a');
+  //         document.body.appendChild(link);
 
-          link.setAttribute('href', jpegUrl);
-          link.setAttribute('download', File_Name);
-          link.click();
-          document.body.removeChild(link);
-        }
-      }
-  }
+  //         link.setAttribute('href', jpegUrl);
+  //         link.setAttribute('download', File_Name);
+  //         link.click();
+  //         document.body.removeChild(link);
+  //       }
+  //     }
+  // }
 
   /*clear or reset range value*/
   clearAll.addEventListener('click', function () {
