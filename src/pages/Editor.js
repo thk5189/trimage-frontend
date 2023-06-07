@@ -25,7 +25,7 @@ const Editor = () => {
     let canvas = document.querySelector('#image_canvas');
     const context = canvas.getContext('2d');
 
-    let File_Name;
+    // let File_Name;
     let Edited = false;
 
     /*handle choose image event*/
