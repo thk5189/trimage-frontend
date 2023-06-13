@@ -53,6 +53,7 @@ import AlbumDetail from './pages/AlbumDetail';
 function App() {
   const URL = 'http://localhost:4000';
 
+  
   return (
     <div className="App">
       <Header />
@@ -66,7 +67,7 @@ function App() {
       </Routes>
       <Footer />
     </div>
-    
+
   );
 }
 
