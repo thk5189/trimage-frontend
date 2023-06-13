@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-const baseURL = 'http://localhost:4000'; // Replace with your backend server URL
+const baseURI = 'http://localhost:4000'; // Replace with your backend server URL
 
 const api = axios.create({
-  baseURL: baseURL,
+  baseURI: baseURI,
 });
 
 // Define API methods to interact with your backend routes
