@@ -1,43 +1,51 @@
-.album-container {
-    max-width: 600px;
-    margin: 0 auto;
+.Albumpage {
+    background-color: #f5f5f5;
     padding: 20px;
   }
   
-  .album-card {
-    display: flex;
-    align-items: center;
+  .Albumpage h2 {
+    font-size: 24px;
+    color: #333;
     margin-bottom: 10px;
   }
   
-  .album-card input {
-    flex-grow: 1;
-    margin-right: 10px;
-    padding: 5px;
+  .Albumpage ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
   }
   
-  .album-card button {
-    background-color: #f44336;
+  .Albumpage li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease-in-out;
+  }
+  
+  .Albumpage li:hover {
+    background-color: #f8f8f8;
+  }
+  
+  .Albumpage li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .Albumpage li button {
+    background-color: #e74c3c;
     color: #fff;
     border: none;
     padding: 5px 10px;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
   }
   
-  .create-album-container {
-    margin-bottom: 20px;
-  }
-  
-  .create-album-container input {
-    width: 300px;
-    padding: 10px;
-  }
-  
-  .create-album-container button {
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
+  .Albumpage li button:hover {
+    background-color: #c0392b;
   }
   

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import '../css/album.css'
 
 const Album = () => {
   const [albums, setAlbums] = useState([]);
@@ -41,7 +42,7 @@ const Album = () => {
   };
 
   return (
-    <div>
+    <div className="Albumpage"> {/* Apply the className to the parent div */}
       <h2>Albums</h2>
       <ul>
         {albums.map(album => (
