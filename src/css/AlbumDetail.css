@@ -1,0 +1,65 @@
+.album-detail__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  .album-detail__image-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .album-detail__card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1; /* makes the card always a square */
+    display: flex; /* additional flexbox properties to */
+    align-items: center; /* center the image both vertically and horizontally */
+    justify-content: center; 
+  }
+  
+  .album-detail__image-item {
+    max-width: 100%; /* ensures the image doesn't exceed the card's size */
+    max-height: 100%;
+    object-fit: cover;
+  }
+  
+  .album-detail__add-image-container {
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  
+  .album-detail__input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .album-detail__add-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0066ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .album-detail__pagination-button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #0066ff;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  

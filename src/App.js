@@ -37,21 +37,21 @@
 // }
 
 // export default App;
-
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-import Header from "./components/Header";
-import Banner from "./components/Banner";
-import Footer from "./components/Footer";
+import Header from './components/Header';
+import Banner from './components/Banner';
+import Footer from './components/Footer';
 
-import Home from "./pages/Home";
-import Editor from "./pages/Editor";
-import Learnmore from "./pages/Learnmore"
+import Home from './pages/Home';
+import Editor from './pages/Editor';
+import Learnmore from './pages/Learnmore';
+import Album from './pages/Album';
+import AlbumDetail from './pages/AlbumDetail';
 
 function App() {
-  const URL = "http://localhost:4000";
+  const URL = 'http://localhost:4000';
 
   return (
     <div className="App">
@@ -62,6 +62,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Editor" element={<Editor URL={URL} />} />
           <Route path="/Learnmore" element={<Learnmore />} />
+          <Route path="/Album" element={<Album />} />
+          <Route path="/Album/:albumId" element={<AlbumDetail />} />
         </Routes>
         <Footer />
       </Router>
