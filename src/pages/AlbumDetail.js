@@ -1,36 +1,34 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import albumAPI from '../api.js';
-import '../css/AlbumDetail.css';
 
-function AlbumDetail() {
-  const { albumId } = useParams();
+const AlbumDetail = () => {
+  const { id } = useParams();
   const [album, setAlbum] = useState(null);
-  const [newImageUrl, setNewImageUrl] = useState('');
-  const [currentPage, setCurrentPage] = useState(0); 
-  const imagesPerPage = 20; 
-
+  const [newImage, setNewImage] = useState('');
+  
   useEffect(() => {
-    fetchAlbum();
-  }, []);
+    axios.get(`http://localhost:4000/album/${id}`)
+      .then(response => {
+        setAlbum(response.data.data);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }, [id]);
 
-  const fetchAlbum = async () => {
-    try {
-      const response = await albumAPI.getAlbumById(albumId);
-      setAlbum(response.data.data);
-    } catch (error) {
-      console.error('Error fetching album:', error);
-    }
-  };
-
-  const handleAddImage = async () => {
-    try {
-      await albumAPI.addImageToAlbum(albumId, { image: newImageUrl });
-      setAlbum({ ...album, images: [...album.images, newImageUrl] });
-      setNewImageUrl('');
-    } catch (error) {
-      console.error('Error adding image:', error);
-    }
+  const addImageToAlbum = () => {
+    axios.post(`http://localhost:4000/album/${id}/image`, { image: newImage })
+      .then(response => {
+        setAlbum(prevAlbum => ({
+          ...prevAlbum,
+          images: [...prevAlbum.images, newImage],
+        }));
+        setNewImage('');
+      })
+      .catch(error => {
+        console.log(error);
+      });
   };
 
   if (!album) {
@@ -38,29 +36,27 @@ function AlbumDetail() {
   }
 
   return (
-    <div className="album-detail__container">
-      <h2>{album.name}</h2>
-      <div className="album-detail__image-list">
-        {album.images.slice(currentPage * imagesPerPage, (currentPage + 1) * imagesPerPage).map((image, index) => (
-          <div key={index} className="album-detail__card">
-            <img src={image} alt={`Photo ${index}`} className="album-detail__image-item"/>
-          </div>
-        ))}
-      </div>
-      <div className="album-detail__add-image-container">
+    <div>
+      <h2>Album Detail</h2>
+      <h3>Name: {album.name}</h3>
+      <div>
+        <h4>Images:</h4>
+        <ul>
+          {album.images.map((image, index) => (
+            <li key={index}>
+              <img src={image} alt={`Image ${index + 1}`} />
+            </li>
+          ))}
+        </ul>
         <input
           type="text"
-          value={newImageUrl}
-          onChange={(e) => setNewImageUrl(e.target.value)}
-          placeholder="Enter image URL"
-          className="album-detail__input"
+          value={newImage}
+          onChange={e => setNewImage(e.target.value)}
         />
-        <button onClick={handleAddImage} className="album-detail__add-button">Add Image</button>
+        <button onClick={addImageToAlbum}>Add Image</button>
       </div>
-      <button onClick={() => setCurrentPage(currentPage - 1)} disabled={currentPage === 0} className="album-detail__pagination-button">Previous</button>
-      <button onClick={() => setCurrentPage(currentPage + 1)} disabled={(currentPage + 1) * imagesPerPage >= album.images.length} className="album-detail__pagination-button">Next</button>
     </div>
   );
-}
+};
 
 export default AlbumDetail;

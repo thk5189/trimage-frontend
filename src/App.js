@@ -38,7 +38,7 @@
 
 // export default App;
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
 import Banner from './components/Banner';
@@ -55,18 +55,16 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Header />
-        <Banner />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Editor" element={<Editor URL={URL} />} />
-          <Route path="/Learnmore" element={<Learnmore />} />
-          <Route path="/Album" element={<Album />} />
-          <Route path="/Album/:albumId" element={<AlbumDetail />} />
-        </Routes>
-        <Footer />
-      </Router>
+      <Header />
+      <Banner />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/Editor" element={<Editor URL={URL} />} />
+        <Route path="/Learnmore" element={<Learnmore />} />
+        <Route path="/Album" element={<Album />} /> {/* Add the Album route */}
+        <Route path="/Album/:id" element={<AlbumDetail />} /> 
+      </Routes>
+      <Footer />
     </div>
   );
 }
