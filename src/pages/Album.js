@@ -57,7 +57,8 @@ const Album = () => {
         value={newAlbumName}
         onChange={(e) => setNewAlbumName(e.target.value)}
       />
-      <button onClick={createAlbum}>Create Album</button>
+     <button className="create-album-button" onClick={createAlbum}>Create Album</button>
+
     </div>
   );
 };

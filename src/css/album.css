@@ -49,3 +49,11 @@
     background-color: #c0392b;
   }
   
+  .Albumpage button.create-album-button {
+    background-color: #3498db;
+  }
+  
+  .Albumpage button.create-album-button:hover {
+    background-color: #2980b9;
+  }
+  

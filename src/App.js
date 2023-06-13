@@ -51,8 +51,8 @@ import Album from './pages/Album';
 import AlbumDetail from './pages/AlbumDetail';
 
 function App() {
-
-  const URL = 'https://trimage-backend.herokuapp.com/'
+  const URL = 'http://localhost:4000';
+  // const URL = 'https://trimage-backend.herokuapp.com/'
 
 
   return (
