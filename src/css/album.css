@@ -1,59 +1,69 @@
-.Albumpage {
-    background-color: #f5f5f5;
+/* album.css */
+
+.albumpage {
+    max-width: 600px;
+    margin: 0 auto;
     padding: 20px;
   }
   
-  .Albumpage h2 {
+  .albumpage h2 {
     font-size: 24px;
-    color: #333;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
-  .Albumpage ul {
-    list-style-type: none;
+  .albumpage ul {
+    list-style: none;
     padding: 0;
-    margin: 0;
   }
   
-  .Albumpage li {
+  .albumpage .album-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease-in-out;
   }
   
-  .Albumpage li:hover {
-    background-color: #f8f8f8;
+  .albumpage .album-details {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
   }
   
-  .Albumpage li a {
-    color: #333;
+  .albumpage .album-details .album-name {
     text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    margin-right: 10px;
   }
   
-  .Albumpage li button {
-    background-color: #e74c3c;
+  .albumpage .album-details input[type="text"] {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+    border-color: gray;
+  }
+  
+  .albumpage .album-actions button {
+    padding: 8px 12px;
+    background-color: #333;
     color: #fff;
     border: none;
-    padding: 5px 10px;
-    font-size: 14px;
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease-in-out;
   }
   
-  .Albumpage li button:hover {
-    background-color: #c0392b;
+  .albumpage .album-actions button:hover {
+    background-color: #555;
   }
   
-  .Albumpage button.create-album-button {
-    background-color: #3498db;
+  .albumpage .create-album-button {
+    background-color: #008000;
+    margin-top: 10px;
   }
   
-  .Albumpage button.create-album-button:hover {
-    background-color: #2980b9;
+  .albumpage .create-album-button:hover {
+    background-color: #00a000;
   }
   
