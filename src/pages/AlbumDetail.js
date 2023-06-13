@@ -8,7 +8,7 @@ const AlbumDetail = () => {
   const [newImage, setNewImage] = useState('');
   
   useEffect(() => {
-    axios.get(`http://localhost:4000/album/${id}`)
+    axios.get(`https://trimage-backend.herokuapp.com/album/${id}`) // Update the URL
       .then(response => {
         setAlbum(response.data.data);
       })
@@ -18,7 +18,7 @@ const AlbumDetail = () => {
   }, [id]);
 
   const addImageToAlbum = () => {
-    axios.post(`http://localhost:4000/album/${id}/image`, { image: newImage })
+    axios.post(`https://trimage-backend.herokuapp.com/album/${id}/image`, { image: newImage }) // Update the URL
       .then(response => {
         setAlbum(prevAlbum => ({
           ...prevAlbum,

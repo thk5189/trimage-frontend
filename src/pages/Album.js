@@ -8,7 +8,7 @@ const Album = () => {
 
   useEffect(() => {
     // Fetch all albums
-    axios.get('http://localhost:4000/album')
+    axios.get('https://trimage-backend.herokuapp.com/album') // Update the URL
       .then(response => {
         setAlbums(response.data.data);
       })
@@ -19,7 +19,7 @@ const Album = () => {
 
   const createAlbum = () => {
     // Create a new album
-    axios.post('http://localhost:4000/album', { name: newAlbumName })
+    axios.post('https://trimage-backend.herokuapp.com/album', { name: newAlbumName }) // Update the URL
       .then(response => {
         setAlbums(prevAlbums => [...prevAlbums, response.data.data]);
         setNewAlbumName('');
@@ -31,7 +31,7 @@ const Album = () => {
 
   const deleteAlbum = (id) => {
     // Delete an album
-    axios.delete(`http://localhost:4000/album/${id}`)
+    axios.delete(`https://trimage-backend.herokuapp.com/album/${id}`) // Update the URL
       .then(response => {
         setAlbums(prevAlbums => prevAlbums.filter(album => album._id !== id));
       })
